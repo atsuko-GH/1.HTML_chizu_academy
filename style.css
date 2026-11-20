@@ -1,0 +1,165 @@
+/* ===== 全体の基本設定 ===== */
+* {
+  box-sizing: border-box; /* padding と border を幅に含めて計算する */
+}
+
+body {
+  margin: 0; /* ブラウザが最初から付ける余白をなくす */
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+  color: #4a3a28;
+  background: #f4ecd8;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e3d5b8;
+  display: flex;                   /* 中身を横に並べる */
+  justify-content: space-between;  /* 左はしと右はしに分ける */
+  align-items: center;             /* 上下の真ん中にそろえる */
+}
+
+
+
+header p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+nav a {
+  color: #2c5d7c;
+}
+
+/* ===== セクション共通 ===== */
+section {
+  max-width: 720px; /* 幅の上限 */
+  margin: 0 auto;   /* 自動で中央寄せ */
+  padding: 48px 24px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 0 0 16px;
+  letter-spacing: 0.1em; /* 文字の間隔を広げる */
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 24px;
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  max-width: none;          /* 幅を横いっぱいに広げる */
+  padding: 40px 24px;      /* 上下の余白 */
+  background-image:
+    linear-gradient(rgba(244, 236, 216, 0.8), rgba(244, 236, 216, 0.5)),
+    url("image/hero.jpg");  /* 画像の上に、うすいベージュを重ねる */
+  background-size: cover;       /* 画像をすき間なく敷きつめる */
+  background-position: center;  /* 画像の真ん中を中心に表示する */
+  max-width: 100%;  /* 画面が狭いときは、画面の幅より大きくならない */
+}
+
+/* ===== 見出しのフォント ===== */
+h1, h2, h3, header p {
+  font-family: "Shippori Mincho", serif;
+}
+
+/* ===== 特色カード ===== */
+article {
+  background: #fbf6ea;
+  padding: 16px 16px;
+  margin-top: 16px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  /* 影を付ける */
+}
+
+
+article h3 {
+  margin: 0 0 8px;
+}
+
+article p {
+  margin: 0;
+}
+
+/* ===== ボタン(class で指定) ===== */
+.button {
+  display: inline-block;
+  background: #2c5d7c;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-decoration: none; /* 下線を消す */
+  transition: 0.2s;      /* 変化を0.2秒かけてなめらかにする */
+}
+
+.button:hover {
+  background: #214a63;          /* 少し濃い青にする */
+  transform: translateY(-2px);  /* 上に2px動かす */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== フッター ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #e3d5b8;
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== 講師紹介 ===== */
+.teachers {
+  display: flex; /* 中身を横に並べる */
+  gap: 10px;     /* カードとカードのすき間 */
+}
+
+.teachers article {
+  flex: 1;       /* 3枚を同じ幅にする */
+  margin-top: 0;
+}
+
+.teachers img {
+  display: block;       /* 画像を1つのブロックとして扱う */
+  width: 120px;         /* 横幅 */
+  aspect-ratio: 1 / 1;  /* 縦と横を同じ長さ（正方形）にする */
+  object-fit: cover;    /* はみ出た部分を切り取って、正方形におさめる */
+  border-radius: 50%;   /* 角を丸めて、円にする */
+  margin: 0 auto 12px;  /* 真ん中に寄せて、下にすき間を作る*/
+  max-width: 100%;  /* 画面が狭いときは、画面の幅より大きくならない */
+  }
+
+.teachers p {
+  font-size: 0.875rem; /* 文字を少し小さくする */
+}
+
+
+/* ===== Warningページ ===== */
+.warning img {
+  width: 700px;         /* 横幅。高さは自動で同じ比率に縮む */
+  max-width: 100%;  /* 画面が狭いときは、画面の幅より大きくならない */
+}
+
+
+/* ===== スマホ用（画面の幅が600px以下のとき） ===== */
+@media (max-width: 600px) {
+  .teachers {
+    flex-direction: column;  /* 横並び → 縦並びにする */
+  }
+  h1 {
+    font-size: 2.5rem;  /* 3.5rem → 2.5rem に小さくする */
+  }
+ h2 {
+    font-size: 1.25rem;  /* 1.5rem → 1.25rem に小さくする */
+  }
+}
